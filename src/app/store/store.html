@@ -1,0 +1,37 @@
+<div class="store-container">
+  <!-- زر تصفية -->
+  <div class="filter-dropdown-container" (click)="showFilters = !showFilters">
+    <div class="filter-toggle" [class.open]="showFilters">
+      <span>تصفية</span>
+      <span class="arrow-icon">▼</span>
+    </div>
+
+    <!-- قائمة التصفية المنسدلة -->
+    <div class="filter-dropdown" *ngIf="showFilters">
+      <div class="filter-option" [class.active]="isChecked('all')" (click)="toggleCategory('all')">الكل</div>
+      <div class="filter-option" [class.active]="isChecked('تيشرت')" (click)="toggleCategory('تيشرت')">التيشيرتات</div>
+      <div class="filter-option" [class.active]="isChecked('شال')" (click)="toggleCategory('شال')">شالات الاتحاد</div>
+      <div class="filter-option" [class.active]="isChecked('علم')" (click)="toggleCategory('علم')">علم الاتحاد</div>
+      <div class="filter-option" [class.active]="isChecked('كوب')" (click)="toggleCategory('كوب')">أكواب الاتحاد</div>
+      <div class="filter-option" [class.active]="isChecked('شنطة')" (click)="toggleCategory('شنطة')">شنط الاتحاد</div>
+    </div>
+  </div>
+
+  <!-- المنتجات -->
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <div class="image-container">
+        <img [src]="product.image" [alt]="product.name" />
+        <button class="buy-now-button">اشترِ الآن</button>
+        <div class="discount-badge" *ngIf="product.discount">{{ product.discount }}%</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">{{ product.name }}</div>
+        <div class="product-price">
+          <del *ngIf="product.oldPrice">SAR {{ product.oldPrice }}</del>
+          <span class="new-price">SAR {{ product.price }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

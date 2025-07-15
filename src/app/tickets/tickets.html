@@ -1,0 +1,18 @@
+<div class="tickets-container">
+  <h2 class="tickets-title">تذاكر المباريات</h2>
+
+  <div class="matches-grid">
+    <div class="match-card" *ngFor="let match of matches">
+      <img [src]="match.image" [alt]="match.name" />
+      <div class="match-info">
+        <h3 class="match-name">{{ match.name }}</h3>
+        <p class="stadium">🏟️ الملعب: {{ match.stadium }}</p>
+        <p class="date">📅 التاريخ: {{ match.date }}</p>
+        <p class="time">⏰ الوقت: {{ match.time }}</p>
+      </div>
+      <button *ngIf="match.available" class="buy-ticket">شراء التذكرة</button>
+      <span *ngIf="!match.available" class="not-available">غير متاح حالياً</span>
+    </div>
+
+  </div>
+</div>

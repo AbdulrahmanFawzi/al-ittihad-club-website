@@ -1,0 +1,12 @@
+<div class="championships-page">
+  <div class="header">
+    <div class="circle">50</div>
+    <h2>بطولات الفريق الأول لكرة القدم</h2>
+  </div>
+
+  <div class="card" *ngFor="let cup of championships">
+    <img [src]="cup.image" alt="كأس" class="cup-img" />
+    <div class="cup-title">{{ cup.title }}</div>
+    <div class="circle">{{ cup.number }}</div>
+  </div>
+</div>

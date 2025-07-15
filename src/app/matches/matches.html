@@ -1,0 +1,52 @@
+<div class="tabs-container">
+  <div class="tab" [class.active]="selectedTab === 'upcoming'" (click)="selectedTab = 'upcoming'">المباريات القادمة</div>
+  <div class="tab" [class.active]="selectedTab === 'finished'" (click)="selectedTab = 'finished'">المباريات المنتهية</div>
+</div>
+
+<div [@fadeAnimation]>
+  <div *ngIf="selectedTab === 'upcoming'">
+    <div *ngFor="let match of upcomingMatches" class="match-card shadow">
+      <div class="status upcoming">قادمة</div>
+      <div class="match-content">
+        <div class="team">
+          <img [src]="match.homeLogo" class="team-logo" />
+          <span class="team-name">{{ match.homeTeam }}</span>
+        </div>
+        <div class="details">
+          <img [src]="match.competitionLogo" class="comp-logo" />
+          <div class="comp-name">{{ match.competition }}</div>
+          <div class="match-time">{{ match.date }} <br> {{ match.time }}</div>
+          <div class="score upcoming-score">قريباً</div>
+        </div>
+        <div class="team">
+          <img [src]="match.awayLogo" class="team-logo" />
+          <span class="team-name">{{ match.awayTeam }}</span>
+        </div>
+      </div>
+      <a class="details-link" href="#">تفاصيل المباراة ></a>
+    </div>
+  </div>
+
+  <div *ngIf="selectedTab === 'finished'">
+    <div *ngFor="let match of finishedMatches" class="match-card shadow">
+      <div class="status finished">منتهية</div>
+      <div class="match-content">
+        <div class="team">
+          <img [src]="match.homeLogo" class="team-logo" />
+          <span class="team-name">{{ match.homeTeam }}</span>
+        </div>
+        <div class="details">
+          <img [src]="match.competitionLogo" class="comp-logo" />
+          <div class="comp-name">{{ match.competition }}</div>
+          <div class="match-time">{{ match.date }} <br> {{ match.time }}</div>
+          <div class="score">{{ match.score }}</div>
+        </div>
+        <div class="team">
+          <img [src]="match.awayLogo" class="team-logo" />
+          <span class="team-name">{{ match.awayTeam }}</span>
+        </div>
+      </div>
+      <a class="details-link" href="#">تفاصيل المباراة ></a>
+    </div>
+  </div>
+</div>

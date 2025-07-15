@@ -1,0 +1,10 @@
+<div class="news-container">
+  <div class="news-card" *ngFor="let news of newsList">
+    <img [src]="news.image" alt="news image" class="news-image" />
+    <div class="news-text">
+      <h3 class="news-title">{{ news.title }}</h3>
+      <p class="news-content">{{ news.content }}</p>
+      <p class="news-date">🗓 {{ news.date }}</p>
+    </div>
+  </div>
+</div>

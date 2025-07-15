@@ -1,0 +1,134 @@
+.tickets-container {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 2rem 1rem 6rem 1rem;
+  font-family: 'Tajawal', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tickets-title {
+  color: #000; // ← تم التغيير من الأصفر إلى الأسود
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.match-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 2rem 1.2rem;
+  width: 100%;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  // تم إزالة البوردر الأصفر
+}
+
+.match-card img {
+  width: 100%;
+  max-width: 16rem;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  margin-bottom: 1.2rem;
+  object-fit: cover;
+  background: #eee;
+}
+
+.match-info {
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.match-name {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.stadium,
+.date,
+.time {
+  color: #222;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.buy-ticket {
+  background: #f8bc06;
+  color: #000; // ← تم التأكيد على أن النص بالأسود
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: block;
+  text-align: center;
+}
+
+.buy-ticket:hover {
+  background: #000;
+  color: #f8bc06;
+  border: 2px solid #f8bc06;
+}
+
+.not-available {
+  background: #ccc;
+  color: #555;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: block;
+  text-align: center;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (min-width: 600px) {
+  .matches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .matches-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tickets-title {
+    font-size: 1.5rem;
+  }
+
+  .match-card {
+    padding: 1rem 0.6rem;
+    max-width: 95vw;
+  }
+}

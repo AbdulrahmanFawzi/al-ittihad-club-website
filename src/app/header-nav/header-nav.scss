@@ -1,0 +1,101 @@
+.header-nav {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  background: #fff;
+  z-index: 1100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  flex-direction: row-reverse; // لتكون الأيقونة في اليمين
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.club-logo {
+  height: 70px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.club-logo:hover {
+  transform: scale(1.07);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-links a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+}
+
+.nav-links a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-icons i {
+  font-size: 1.5rem;
+  color: #111;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-icons i:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .club-logo {
+    height: 50px;
+  }
+
+  .nav-icons i {
+    font-size: 1.2rem;
+  }
+}
